@@ -5,6 +5,5 @@ class Solution:
             hmap[val] = i
                 
         for i, val in enumerate(nums):
-            currtarget = target - val
-            if currtarget in hmap.keys() and hmap[currtarget] != i:
-                return [i, hmap[currtarget]]
+            if target - val in hmap.keys() and hmap[target - val] != i:
+                return [i, hmap[target - val]]
