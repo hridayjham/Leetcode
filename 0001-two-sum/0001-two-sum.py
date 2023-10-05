@@ -3,7 +3,7 @@ class Solution:
         hmap = {}
         ans = []
         for i in range(len(nums)):
-            if nums[i] not in hmap.keys():
+            ##if nums[i] not in hmap.keys():
                 hmap[nums[i]] = i
                 
         for i in range(len(nums)):
