@@ -1,19 +1,19 @@
 class Solution:
     def maxProduct(self, nums: List[int]) -> int:
         res = max(nums)
-        curMax = 1 
-        curMin = 1
+        minProd = 1
+        maxProd = 1
+        
         for n in nums:
             if n == 0:
-                curMax = 1
-                curMin = 1
-                continue
-            tmp = n * curMax
-            curMax = max(n * curMax, n * curMin, n)
-            curMin = min(tmp, n * curMin, n)
-            if curMax > res:
-                res = curMax
+                minProd = 1
+                maxProd = 1
+            temp = n * maxProd
+            maxProd = max(temp, n * minProd, n)
+            minProd = min(temp, n * minProd, n)
+            
+            if res < maxProd:
+                res = maxProd
+                
         return res
-
-
         
